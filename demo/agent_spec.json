@@ -1,0 +1,28 @@
+{
+  "name": "Discharge Planning Agent",
+  "version": "1.0",
+  "description": "AI healthcare agent that generates discharge summaries using FHIR data, MCP-based risk scoring, and patient-friendly explanations.",
+  "endpoint": {
+    "url": "https://spotting-dash-marshland.ngrok-free.dev/agent/discharge",
+    "method": "GET",
+    "input": {
+      "patient_id": "string"
+    }
+  },
+  "output": {
+    "structured": {
+      "summary": "string",
+      "instructions": "string",
+      "risk_level": "string",
+      "follow_up": "string"
+    },
+    "patient_friendly": "string"
+  },
+  "capabilities": [
+    "FHIR data integration",
+    "Readmission risk scoring (MCP tool)",
+    "Structured clinical summaries",
+    "Patient-friendly explanations",
+    "A2A interoperability ready"
+  ]
+}
