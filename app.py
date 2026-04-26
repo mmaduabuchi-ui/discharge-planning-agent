@@ -4,11 +4,9 @@ from agent.discharge_agent import generate_discharge_summary
 
 app = FastAPI()
 
-
 @app.get("/")
-def root():
-    return {"message": "Healthcare AI Agent Running 🚀"}
-
+def home():
+    return {"message": "Discharge Planning Agent Running 🚀"}
 
 @app.get("/discharge-summary/{patient_id}")
 def discharge_summary(patient_id: str):
@@ -16,6 +14,4 @@ def discharge_summary(patient_id: str):
     conditions = get_conditions(patient_id)
     meds = get_medications(patient_id)
 
-    result = generate_discharge_summary(patient, conditions, meds)
-
-    return result
+    return generate_discharge_summary(patient, conditions, meds)
